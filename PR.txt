@@ -1,0 +1,22 @@
+--- Ex 1 ---
+
+O tratamento dos dados foi realizado com base num script que permite transformar os dados (que foram colocados num ficheiro csv) num formato json,
+de modo a facilitar a sua importação para a base de dados Mongo.
+
+Para correr este script, basta usar o comando python csv2json.py, alterando no codigo os ficheiros que pretendemos transformar
+
+Foram ainda removidos carateres especiais para evitar problemas de encoding.
+
+A importação dos ficheiros de dados json para a base de dados é feita com os seguintes comandos: 
+
+    mongoimport fracoes.json -d CONDOMINIO -c fracoes --drop --jsonArray
+    mongoimport pagamentos.json -d CONDOMINIO -c pagamentos --drop --jsonArray
+    mongoimport movimentos.json -d CONDOMINIO -c movimentos --drop --jsonArray
+
+Note-se que não é necessário criar a Base de Dados pois a importação com estes comandos já a cria.
+
+Para correr o programa basta fazer npm start (utiliza o nodemon) e passa a correr na porta 3000
+
+--- Ex 2 ---
+
+Para correr o programa basta fazer npm start (utiliza o nodemon) e passa a correr na porta 3001
